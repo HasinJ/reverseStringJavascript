@@ -12,6 +12,10 @@ const reverseString = function(sentence) {
 
     }
     newSentence.push(newWord.join(''));
+    /*
+      since we're starting with the last word, 
+      pushing that word into the new sentence reverses the order instead of writing words[i]
+    */
   }
   return newSentence.join(' ');
 }
