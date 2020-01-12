@@ -1,15 +1,17 @@
-const reverseString = function(string) {
-  let sentence = string.split(' ');
-  for (let i = sentence.length-1; i >= 0; i--) {
-    let newWord = [];
-    let word = [];
-    word = sentence[i].split('');
-    for (let j = word.length-1; j >= 0; j--) {
-      newWord.push(word.pop());
+const reverseString = function(sentence) {
+  let words = sentence.split(' ');
+  for (let i = words.length-1; i >= 0; i--) {
+    let newWord = []; //to get rid of the remains of the last iteration
+    let letters = [];
+    letters = words[i].split('');
+    for (let j = letters.length-1; j >= 0; j--) {
+      newWord.push(letters.pop());
     }
-    sentence[i] = newWord.join('');
+    words[i] = newWord.join('');
+/*replacing each element with the new word, instead of popping it into a new array
+allows us to properly use iterations so that we don't go over the sentence's threshold*/
   }
-  return sentence.join(' ');
+  return words.join(' ');
 }
 
 module.exports = reverseString
